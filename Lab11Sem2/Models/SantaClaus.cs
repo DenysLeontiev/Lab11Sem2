@@ -12,13 +12,15 @@ namespace Lab11Sem2.Models
         private static SantaClaus instance;
         private GiftFactory goodGiftFactory;
         private GiftFactory badGiftFactory;
-        public List<Child> children;
+        //public List<Child> children;
+        public ChildrenList childrenList;
 
         private SantaClaus()
         {
             goodGiftFactory = new GoodGiftFactory();
             badGiftFactory = new BadGiftFactory();
-            children = new List<Child>();
+            //children = new List<Child>();
+            childrenList = new ChildrenList();
         }
 
         public static SantaClaus Instance
@@ -33,12 +35,12 @@ namespace Lab11Sem2.Models
 
         public void AddChild(Child child)
         {
-            children.Add(child);
+            childrenList.AddChild(child);
         }
 
         public void SendGifts()
         {
-            foreach (Child child in children)
+            foreach (Child child in childrenList)
             {
                 int goodDeeds = child.GoodDeedsCount;
                 int badDeeds = child.BadDeedsCount;
@@ -73,7 +75,7 @@ namespace Lab11Sem2.Models
 
         private int GetGoodDeedsCount(Child child)
         {
-            var currentChild = children.FirstOrDefault(x => x.Name == child.Name);
+            var currentChild = childrenList.FirstOrDefault(x => x.Name == child.Name);
             if(currentChild == null)
             {
                 return 0;
@@ -84,7 +86,7 @@ namespace Lab11Sem2.Models
 
         private int GetBadDeedsCount(Child child)
         {
-            var currentChild = children.FirstOrDefault(x => x.Name == child.Name);
+            var currentChild = childrenList.FirstOrDefault(x => x.Name == child.Name);
             if (currentChild == null)
             {
                 return 0;

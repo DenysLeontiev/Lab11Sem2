@@ -37,7 +37,7 @@ namespace Lab11Sem2
             santaClaus.SendGifts();
 
             Console.WriteLine("Here what children got: \n");
-            foreach (var child in santaClaus.children)
+            foreach (var child in santaClaus.childrenList)
             {
                 foreach (var childGift in child.ChildGifts)
                 {
