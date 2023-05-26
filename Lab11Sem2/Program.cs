@@ -6,14 +6,14 @@ namespace Lab11Sem2
 {
     internal class Program
     {
-        public static List<ChildGift> EdibleGifts = new List<ChildGift>
+        public static List<ChildGift> EdibleGifts = new()
         {
             new ChildGift("Alcohol", GiftType.Good),
             new ChildGift("Drugs", GiftType.Good),
             new ChildGift("Cotton Candy(Fairy Floss)", GiftType.Good),
         };
 
-        public static List<ChildGift> InedibleGifts = new List<ChildGift>
+        public static List<ChildGift> InedibleGifts = new()
         {
             new ChildGift("Stick", GiftType.Bad),
             new ChildGift("Stone", GiftType.Bad),
